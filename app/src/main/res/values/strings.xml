@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">List</string>
+    <string name="lastname">LastName</string>
+    <string name="firstname">FirstName</string>
 </resources>
