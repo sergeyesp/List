@@ -1,4 +1,28 @@
 package com.example.list.adapter
 
-class UserAdapter {
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import com.example.list.R
+import com.example.list.model.UserModel
+
+class UserAdapter: RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
+
+    private var userList = emptyList<UserModel>()
+
+    class UserViewHolder(view: View): RecyclerView.ViewHolder(view)
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_user_layout, parent, false)
+        return UserViewHolder(view)
+    }
+
+    override fun getItemCount(): Int {
+        return  userList.size
+    }
+
+    override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
+        TODO("Not yet implemented")
+    }
 }
