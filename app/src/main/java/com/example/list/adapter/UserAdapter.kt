@@ -1,15 +1,17 @@
 package com.example.list.adapter
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.list.R
 import com.example.list.model.UserModel
 import kotlinx.android.synthetic.main.item_user_layout.view.*
 
-class UserAdapter: RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
+class UserAdapter(private val context: Context): RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
     private var userList = emptyList<UserModel>()
 
@@ -27,6 +29,9 @@ class UserAdapter: RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         holder.itemView.tv_last_name.text = userList[position].lastName
         holder.itemView.tv_first_name.text = userList[position].firstName
+        holder.itemView.setOnClickListener {
+            Toast.makeText(context, "$userList[position]", Toast.LENGTH_SHORT).show()
+        }
     }
 
     @SuppressLint("NotifyDataSetChanged")

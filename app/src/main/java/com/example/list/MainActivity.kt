@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.recyclerview.widget.RecyclerView
 import com.example.list.adapter.UserAdapter
 import com.example.list.databinding.ActivityMainBinding
+import com.example.list.model.UserModel
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,5 +24,24 @@ class MainActivity : AppCompatActivity() {
         recyclerView = binding.rvUser
         adapter = UserAdapter()
         recyclerView.adapter = adapter
+        adapter.setList(myUser())
+    }
+
+    fun myUser(): ArrayList<UserModel> {
+        val userList = ArrayList<UserModel>()
+
+        val user = UserModel("Rybak","Sergey")
+        userList.add(user)
+
+        val user2 = UserModel("Rybak","Andrey")
+        userList.add(user2)
+
+        val user3 = UserModel("Rybak","Alexandr")
+        userList.add(user3)
+
+        val user4 = UserModel("Rybak","Tanja")
+        userList.add(user4)
+
+        return userList
     }
 }
