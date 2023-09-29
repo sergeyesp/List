@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initial() {
         recyclerView = binding.rvUser
-        adapter = UserAdapter()
+        adapter = UserAdapter(this)
         recyclerView.adapter = adapter
         adapter.setList(myUser())
     }

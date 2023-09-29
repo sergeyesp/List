@@ -30,7 +30,7 @@ class UserAdapter(private val context: Context): RecyclerView.Adapter<UserAdapte
         holder.itemView.tv_last_name.text = userList[position].lastName
         holder.itemView.tv_first_name.text = userList[position].firstName
         holder.itemView.setOnClickListener {
-            Toast.makeText(context, "$userList[position]", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "$position", Toast.LENGTH_SHORT).show()
         }
     }
 
